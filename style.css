@@ -160,3 +160,85 @@ label {
   transform: scale(1.01);
   box-shadow: 0 6px 4px rgb(222, 222, 222);
 }
+
+
+
+/* ESTA PARTE ES SOLO PARA EL INDEX */
+
+body#index{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #101010;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#i-contenedor_exterior {
+  flex-direction: column;     /* 🔥 hijos en columna (vertical) */            
+  justify-content: center;    /* centro horizontal */
+  align-items: center;        /* centro vertical */
+  background-color: #F0F0F0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(170, 170, 170);
+  width: 750px;
+}
+
+#i-titulo{
+  font-size: 30px;
+  color: #101010;
+  margin: 70px 0px -50px 190px;
+}
+
+#i-contenedor_interno {
+  position: relative;
+  display: flex;             /* 🔥 activa flexbox */
+  justify-content: center;   /* centra horizontalmente */
+  align-items: center;       /* centra verticalmente */
+  background: #F8F8F8;
+  box-shadow: 0 4px 8px rgb(170, 170, 170);
+  border-radius: 10px;
+  margin: 50px;
+}
+
+/* NAVEGADOR */
+#i-navegador {
+  display: flex;               /* Hace que los <a> estén en fila */
+  justify-content: center;     /* Centra horizontalmente los enlaces */
+  align-items: center;         /* Centra verticalmente dentro del contenedor */
+  gap: 10px;                   /* Separación entre los enlaces */
+  margin: 0;                   /* Ajusta según necesites */
+}
+
+/* Lista interna (opcional, si usas <ul>) */
+#i-navegador ul {
+  list-style: none;            /* Quita los bullets */
+  display: flex;               /* Los <li> en fila */
+  flex-direction: row;         /* Horizontal */
+  gap: 30px;                   /* Espacio entre <li> */
+  padding: 0;
+  margin: 10px;
+}
+
+/* Estilo de los enlaces/círculos */
+#i-navegador a {
+  display: flex;               /* Permite centrar texto dentro del círculo */
+  justify-content: center;     /* Centra texto horizontal */
+  align-items: center;         /* Centra texto vertical */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;          /* Círculo perfecto */
+  background: #5dade2;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 2.0s, transform 1.0s, box-shadow 5s; /* Animaciones suaves */
+}
+
+/* Hover de los enlaces */
+#i-navegador a:hover {
+  background: #2e86c1;
+  transform: scale(1.4);      /* Aumenta un poco al pasar el mouse */
+  box-shadow: 0 0 20px 15px #5cbeff;
+}
