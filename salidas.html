@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salidas</title>
+
+  <!-- Conectar el CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <!-- Web -->
+    <div id="contenedor_exterior" class='contenedor'>
+
+        <h1>SALIDAS</h1>
+
+        <nav id="navegador">
+            <ul>
+            <li><a href="ingresos.html">INGRESOS</a></li>
+            <li><a href="salidas.html">SALIDAS</a></li>
+            <li><a href="dannos.html">DAÑOS</a></li>
+            <li><a href="reprocesos.html">REPROCESOS</a></li>
+            </ul>
+        </nav>
+
+    <!-- Login -->
+    <div id="login">
+      <h3>Inicio de Sesion:</h3>
+      <input type="password" id="codigo" placeholder="Ingresa tu código">
+      <button onclick="verificacion()" id="iniciar">Entrar</button>
+      <p id="error" style="color:red; display:none;">Código incorrecto</p>
+    </div>
+        
+        <!-- CUESTIONARIO -->
+        <div class='cuestionario' id="cuestionario" style="display:none;">
+
+            <form id="formulario">
+                
+                <label>Número de Orden:
+                    <input type="number" name="numero_orden" id="numero_orden" required min="0" step="1">
+                </label><br><br>
+            
+                <button type="submit" id="enviar"> Enviar</button>
+                <p id="mensaje_respuesta"></p>
+
+                <h4 id="bienvenida" style="display: none;"></h4>
+            </form>
+
+    </div>
+    <button onclick="cerrarSesion()" id="cerrar">Cerrar sesion</button>
+  </div>
+    
+    <!-- CIERRE DEL CODIGO -->
+    <script src="script-salidas.js"></script> <!-- CONECCION CON EL .JS -->
+</body>
+</html>

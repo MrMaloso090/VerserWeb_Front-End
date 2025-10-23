@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dannos</title>
+  <link rel="stylesheet" href="style.css"> <!-- CONECCION CON EL .CSS -->
+</head>
+<body>
+
+  <!-- COMIENZO DEL CODIGO -->
+
+  <div id="contenedor_exterior" class='contenedor'>
+
+    <h1>DAÑOS</h1>
+    
+    <nav id="navegador">
+      <ul>
+        <li><a href="ingresos.html">INGRESOS</a></li>
+        <li><a href="salidas.html">SALIDAS</a></li>
+        <li><a href="dannos.html">DAÑOS</a></li>
+        <li><a href="reprocesos.html">REPROCESOS</a></li>
+      </ul>
+    </nav>
+
+    <!-- Login -->
+    <div id="login">
+      <h3>Inicio de Sesion:</h3>
+      <input type="password" id="codigo" placeholder="Ingresa tu código">
+      <button onclick="verificacion()" id="iniciar">Entrar</button>
+      <p id="error" style="color:red; display:none;">Código incorrecto</p>
+    </div>
+    
+    <!-- CUESTIONARIO -->
+    <div class='cuestionario' id="cuestionario" style="display:none;">
+
+      <form id="formulario">
+
+        <label>Número de Orden:
+          <input type="number" name="numero_orden" id="numero_orden" required min="0" step="1">
+        </label><br><br>
+
+        
+        <label>Area Responsable:
+          <select name="area_responsable" id="area_responsable" required>
+            <option></option>
+            <option value="TALLA">TALLA</option>
+            <option value="PROVEEDOR">PROVEEDOR</option>
+            <option value="COATING">COATING</option>
+            <option value="BISEL">BISEL</option>
+            <option value="AR">AR</option>
+            <option value="CALIDAD">CALIDAD</option>
+            <option value="DIGITACIÓN">DIGITACIÓN</option>
+            <option value="LABORATORIO">LABORATORIO</option>
+            <option value="LIMPIEZA">LIMPIEZA</option>
+          </select>
+        </label><br><br> 
+
+
+        <!-- jQuery + Select2 (CDN) -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+        <label>Cliente:
+          <select id='cliente' name="cliente" required style="width:100%">
+            <option></option>
+            <!-- lista de clientes -->
+          </select>
+        </label>
+
+        <script>
+          $(function() {
+            $('select[name="cliente"]').select2({
+              placeholder: "Selecciona un cliente",
+              allowClear: true
+            });
+          });
+        </script><br><br><br>
+        
+        <label>Lente:
+          <select required name="lente" id="lente">
+            <option></option>
+            <option value='OD'>OD</option>
+            <option value='OI'>OI</option>
+            <option value='AO'>AO</option>
+          </select>
+        </label><br><br>
+        
+        <label>Motivo:
+          <select name="motivo" id="motivo" required>
+            <option></option>
+            <option value="RAYA-TALLON">RAYA-TALLÓN</option>
+            <option value="OTROS">OTROS</option>
+            <option value="MAL_GENERADO">MAL GENERADO</option>
+            <option value="MAL_BLOQUEADO">MAL BLOQUEADO</option>
+            <option value="PORO-CHORREADO">PORO-CHORREADO</option>
+            <option value="MAL_SUMINISTRADO">MAL SUMINISTRADO</option>
+            <option value="FORMULA">FÓRMULA</option>
+            <option value="MAL_BISEL">MAL BISEL</option>
+            <option value="MAL_CALCULADO">MAL CALCULADO</option>
+            <option value="FALTA_BRILLO-P_GENERADOR">FALTA BRILLO- P GENERADOR</option>
+            <option value="MAL_AR-MACHAS">MAL AR - MACHAS</option>
+            <option value="MARQUILLAS">MARQUILLAS</option>
+            <option value="PROVEEDOR">PROVEEDOR</option>
+            <option value="DANO_EN_LA_MONTURA">DAÑO EN LA MONTURA</option>
+          </select>
+        </label><br><br>
+          
+        <label> Responsable:
+          <select id="responsable" name="responsable" required>
+            <option></option>
+          </select>
+        </label>
+            
+        <script>
+          $(function() {
+            $('select[name="responsable"]').select2({
+              placeholder: "Selecciona un cliente",
+              allowClear: true
+            });
+          });
+        </script><br><br><br>
+        
+        <label> Material:
+          <select name="material" id="material" required>
+            <option></option>
+            <option value="POLY_BLANCO">POLY BLANCO</option>
+            <option value="ALTO_INDICE">ALTO INDICE</option>
+            <option value="PLASTICO_BLANCO">PLASTICO BLANCO</option>
+            <option value="PLASTICO_FOTO">PLASTICO FOTO</option>
+            <option value="POLY_BLUE_CUT">POLY BLUE CUT</option>
+            <option value="POLY_FOTO">POLY FOTO</option>
+            <option value="POLY_TRANSITION">POLY TRANSITION</option>
+          </select>
+        </label><br><br>
+        
+        <label>Gaveta:
+          <input type="text" name="gaveta" id="gaveta" required></input>  
+        </label><br><br>
+      
+        <label>Observacion:
+          <input type="text" name="observacion" id="observacion" required></input>  
+        </label><br><br>
+            
+        
+        <button type="submit" id="enviar"> Enviar</button>
+        <p id="mensaje_respuesta"></p>
+
+        <h4 id="bienvenida" style="display: none;"></h4>
+      </form>
+
+    </div>
+    <button onclick="cerrarSesion()" id="cerrar">Cerrar sesion</button>
+  </div>
+
+  <!-- CIERRE DEL CODIGO -->
+  <script src="script-dannos.js"></script> <!-- CONECCION CON EL .JS -->
+</body>
+</html>

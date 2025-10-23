@@ -1,0 +1,162 @@
+/* CONFIGURACION POR DEFECTO PARA LA PAGINA. */
+body{
+  /* TIPOGRAFIA */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #101010;
+  /* ALINEACION DEL CONTENIDO */
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  height: 100vh;
+  /* FONDO */
+  background-color: #F8F8F8;
+  /* DETALLES */
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  display: flex;
+}
+
+/* CONTENEDOR EXTERIOR. */
+#contenedor_exterior{
+  /* COLOR Y ESTILO DEL CONTENEDOR */
+  background-color: #F0F0F0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(170, 170, 170);
+  /* MARGENES */
+  padding: 20px;
+  min-width: 750px;
+  min-height: 650px;
+  position: relative;
+
+}
+
+/* NAVEGADOR */
+#navegador{
+  display: flex;
+  margin: 0px 0px 0px -10px;
+}
+
+#navegador a{
+  display: flex;                /* Hace que respete el tamaño y te permite centrar el texto */
+  justify-content: center;      /* Centra el texto horizontalmente */
+  align-items: center;          /* Centra el texto verticalmente */
+  background: #5dade2;
+  transition: background 0.10s;
+  transition: transform 0.3s;
+  border-radius: 50%;           /* 🔵 Hace el círculo */
+  width: 120px;
+  height: 120px;
+  color: white;
+  text-decoration: none;        /* Quita el subrayado */
+  font-weight: bold;
+}
+
+#navegador ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#navegador a:hover{
+  background: #2e86c1;
+  transform: scale(1.005);
+}
+
+/* CONTENEDOR DEL LOGIN */
+#login{
+  background: #F8F8F8;
+  box-shadow: 0 4px 8px rgb(170, 170, 170);
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  margin: -590px 0px 0px 200px;
+}
+
+/* BOTON DE INICIO DE SESION */
+#iniciar{
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  transition: background 0.3s;
+  transition: transform 0.3s;
+}
+#iniciar:hover{
+  background: #45a049;
+  transform: scale(1.01);
+}
+
+/* CONTENEDOR DEL FORMULARIO */
+#formulario{
+  background: #F8F8F8;
+  box-shadow: 0 4px 8px rgb(170, 170, 170);
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  margin: -590px 0px 0px 200px;
+
+  max-width: 500px;
+}
+
+/* DISENNO PARA TODOS LOS CAMPOS DE IMPUTS Y LOS SELECTS */
+input, select{
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  border: #F0F0F0 solid 1px;
+  margin: 0px 0px 5px 0px;
+}
+
+/* ETIQUETAS DE LOS CAMPOS DEL FORMULARIO */
+label {
+  display: block;
+  margin-bottom: -20px;
+  font-weight: bold;
+}
+
+/* BOTON DE ENVIAR */
+#enviar{
+  width: 100%;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  transition: background 0.3s;
+  transition: transform 0.3s;
+}
+#enviar:hover{
+  background: #45a049;
+  transform: scale(1.01);
+}
+
+
+/* BOTON DE CERRE DE SESION */
+#cerrar{
+  background: #b13030;
+  color: #fff;
+  border: none;
+  padding: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  margin: 10px 0px 0px 650px;
+  transition: background 0.3s;
+  transition: transform 0.3s;
+  transition: box-shadow 0.3s;
+}
+#cerrar:hover{
+  background:#9a2323;
+  transform: scale(1.01);
+  box-shadow: 0 6px 4px rgb(222, 222, 222);
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingresos</title>
+  <link rel="stylesheet" href="style.css"> <!-- CONECCION CON EL .CSS -->
+</head>
+<body>
+
+<!-- COMIENZO DEL CODIGO -->
+
+  <div id="contenedor_exterior" class='contenedor'>
+    
+    <h1>INGRESOS</h1>
+
+  <!-- Barra de acceco a las distintas paginas-->
+    <nav id="navegador">
+      <ul>
+        <li><a href="ingresos.html">INGRESOS</a></li>
+        <li><a href="salidas.html">SALIDAS</a></li>
+        <li><a href="dannos.html">DAÑOS</a></li>
+        <li><a href="reprocesos.html">REPROCESOS</a></li>
+      </ul>
+    </nav>
+
+    <!-- Login -->
+    <div id="login">
+      <h3>Inicio de Sesion:</h3>
+      <input type="password" id="codigo" placeholder="Ingresa tu código">
+      <button onclick="verificacion()" id="iniciar">Entrar</button>
+      <p id="error" style="color:red; display:none;">Código incorrecto</p>
+    </div>
+    
+    <!-- CUESTIONARIO -->
+    <div class='cuestionario' id="cuestionario" style="display:none;">
+
+      <form id="formulario"> 
+
+        <label>Número de Orden:
+          <input type="number" name="numero_orden" id="numero_orden" min="0" step="1" required>
+        </label><br><br>
+
+
+        <!-- jQuery + Select2 (CDN) -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+        <label>
+          Cliente:
+          <select name="cliente" id="cliente" style="width:100%" required>
+            <option></option>
+            <!-- lista de clientes -->
+          </select>
+        </label>
+
+        <script>
+          $(document).ready(function() {
+            $('#cliente').select2({
+              placeholder: "Selecciona un cliente",
+              allowClear: true
+            });
+          });
+        </script><br><br><br>
+
+
+        <label>Número de Gaveta:
+          <input type="text" name="numero_gaveta" id="numero_gaveta" required>
+        </label><br><br>
+
+        <label>Tipo de Ingreso:
+          <select name="tipo_ingreso" id="tipo_ingreso" required>
+            <option></option>
+            <option value="NORMAL">NORMAL</option>
+            <option value="GARANTIA">GARANTIA</option>
+            <option value="DAÑO AGENCIA">DAÑO AGENCIA</option>
+            <option value="ACOMPAÑAMIENTO COMERCIAL">ACOMPAÑAMIENTO COMERCIAL</option>
+          </select>
+        </label><br><br>
+
+        <!-- Campos ocultos inicialmente -->
+        <div id="campos_garantia" style="display:none;">
+          <label>Motivo de Garantia:
+            <select name="motivo_garantia" id="motivo_garantia">
+              <option></option>
+              <!-- Opciones dinamicas escritas en el .JS -->
+            </select>
+          </label><br><br>
+          
+          <label>Orden de Origen de la Garantia:
+            <input type="number" name="orden_origen" id="orden_origen" min="0" step="1">
+          </label><br><br>
+        </div>
+        <!-- Fin de los campos ocultos inicialmente -->
+
+        <label>Tipo de Lente:
+          <select name="tipo_lente" id="tipo_lente" required>
+            <option></option>
+            <option value="TERMINADO">TERMINADO</option>
+            <option value="TALLADO">TALLADO</option>
+            <option value="SOLO AR O BISEL">SOLO AR O BISEL</option>
+          </select>
+        </label><br><br>
+
+        <label>Ar:
+          <select name="ar" id="ar" required >
+            <option></optino>
+            <option value="SI">SI</option>
+            <option value="NO">NO</option>
+          </select>
+        </label><br><br>
+
+        <label>Estado de Montura:
+          <select name="estado_montura" id="estado_montura" required>
+            <option></option>
+            <option value="COMPLETA METAL">COMPLETA METAL</option>
+            <option value="COMPLETA PASTA">COMPLETA PASTA</option>
+            <option value="RANURADA">RANURADA</option>
+            <option value="SIN MONTURA">SIN MONTURA</option>
+            <option value="TRES PIEZAS">TRES PIEZAS</option>
+          </select>
+        </label><br><br>
+
+        <label>Condición Especial:
+          <select name="condicion_especial" id="condicion_especial" required>
+            <option></option>
+            <option value="n/a">n/a</option>
+            <option value="SIN MONTURA - SIN BISEL">SIN MONTURA - SIN BISEL</option>
+            <option value="OBSEQUIO">OBSEQUIO</option>
+            <option value="MEDIDA ESPECIAL">MEDIDA ESPECIAL</option>
+            <option value="COLOR">COLOR</option>
+            <option value="BRIGADA">BRIGADA</option>
+          </select>
+        </label><br><br>
+
+        <button type="submit" id="enviar"> Enviar</button>
+        <p id="mensaje_respuesta"></p>
+
+        <h4 id="bienvenida" style="display: none;"></h4>
+      </form>
+
+    </div>
+    <button onclick="cerrarSesion()" id="cerrar">Cerrar sesion</button>
+  </div>
+
+  <!-- CIERRE DEL CODIGO -->
+  <script src="script-ingresos.js"></script> <!-- CONECCION CON EL .JS -->
+</body>
+</html>
