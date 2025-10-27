@@ -162,33 +162,43 @@ label {
 }
 
 
-
+/* ESTA PARTE ES SOLO PARA EL INDEX */
 /* ESTA PARTE ES SOLO PARA EL INDEX */
 
+
 body#index{
+  /* TIPOGRAFIA */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: #101010;
-
+  /* ALINEACION DEL CONTENIDO */
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  /* FONDO */
+  background-color: #F8F8F8;
+  /* DETALLES */
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  display: flex;
 }
 
-#i-contenedor_exterior {
-  flex-direction: column;     /* 🔥 hijos en columna (vertical) */            
+
+/* CONTENEDORES */
+#i-contenedor_exterior {       
+  display: flex; 
   justify-content: center;    /* centro horizontal */
   align-items: center;        /* centro vertical */
   background-color: #F0F0F0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgb(170, 170, 170);
-  width: 750px;
+  width: 1620px;
+  height: 780px;
+  transition: transform 1.0s; /* Animaciones suaves */
 }
-
-#i-titulo{
-  font-size: 30px;
-  color: #101010;
-  margin: 70px 0px -50px 190px;
+#i-contenedor_exterior:hover{
+  transform: scale(1.005);
 }
 
 #i-contenedor_interno {
@@ -200,23 +210,75 @@ body#index{
   box-shadow: 0 4px 8px rgb(170, 170, 170);
   border-radius: 10px;
   margin: 50px;
+  width: 1000px;
+  height: 610px;
+  transition: transform 1.0s; /* Animaciones suaves */
+}
+#i-contenedor_interno:hover{
+  transform: scale(1.01);
 }
 
-/* NAVEGADOR */
+#i2-contenedor_interno {
+  position:absolute;
+  display: flex;             /* 🔥 activa flexbox */
+  justify-content: center;   /* centra horizontalmente */
+  align-items: center;       /* centra verticalmente */
+  background-color: #F0F0F0;
+  box-shadow: 0 4px 8px rgb(170, 170, 170);
+  border-radius: 10px;
+  margin: 50px;
+  width: 300px;
+  height: 300px;
+  top: 152.5px;
+  left: 230px;
+  transition: transform 1.0s; /* Animaciones suaves */
+}
+#i2-contenedor_interno:hover{
+  transform: scale(1.1);
+}
+
+
+/* TITULO Y SUBTITULO */
+#i-titulo{
+  font-size: 72.5px;
+  text-decoration: underline;
+  color: #101010;
+  display: flex;
+  position: absolute;
+  top: 32.5px;
+  left: 281px;
+}
+
+#i2-titulo{
+  font-size: 39.5px;
+  color: #101010;
+  display: flex;
+  position: absolute;
+  top: 132.5px;
+  left: 281px;
+}
+
+
+/* NAVEGADORES */
+
+/**/
 #i-navegador {
   display: flex;               /* Hace que los <a> estén en fila */
   justify-content: center;     /* Centra horizontalmente los enlaces */
   align-items: center;         /* Centra verticalmente dentro del contenedor */
   gap: 10px;                   /* Separación entre los enlaces */
   margin: 0;                   /* Ajusta según necesites */
+  position: absolute;
+  top: 94.5px;
+  left: 590px;
 }
 
 /* Lista interna (opcional, si usas <ul>) */
 #i-navegador ul {
   list-style: none;            /* Quita los bullets */
   display: flex;               /* Los <li> en fila */
-  flex-direction: row;         /* Horizontal */
-  gap: 30px;                   /* Espacio entre <li> */
+  flex-direction: column;         /* Horizontal */
+  gap: 29.5px;                   /* Espacio entre <li> */
   padding: 0;
   margin: 10px;
 }
@@ -226,8 +288,8 @@ body#index{
   display: flex;               /* Permite centrar texto dentro del círculo */
   justify-content: center;     /* Centra texto horizontal */
   align-items: center;         /* Centra texto vertical */
-  width: 120px;
-  height: 120px;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;          /* Círculo perfecto */
   background: #5dade2;
   color: white;
@@ -239,6 +301,48 @@ body#index{
 /* Hover de los enlaces */
 #i-navegador a:hover {
   background: #2e86c1;
-  transform: scale(1.4);      /* Aumenta un poco al pasar el mouse */
+  transform: scale(1.2);      /* Aumenta un poco al pasar el mouse */
   box-shadow: 0 0 20px 15px #5cbeff;
+}
+
+
+/**/
+#i2-navegador {
+  display: flex;               /* Hace que los <a> estén en fila */
+  justify-content: center;     /* Centra horizontalmente los enlaces */
+  align-items: center;         /* Centra verticalmente dentro del contenedor */
+  gap: 10px;                   /* Separación entre los enlaces */
+  margin: 0;                   /* Ajusta según necesites */
+}
+
+/* Lista interna (opcional, si usas <ul>) */
+#i2-navegador ul {
+  list-style: none;            /* Quita los bullets */
+  display: flex;               /* Los <li> en fila */
+  flex-direction: column;         /* Horizontal */
+  gap: 30px;                   /* Espacio entre <li> */
+  padding: 0;
+  margin: 10px;
+}
+
+/* Estilo de los enlaces/círculos */
+#i2-navegador a {
+  display: flex;               /* Permite centrar texto dentro del círculo */
+  justify-content: center;     /* Centra texto horizontal */
+  align-items: center;         /* Centra texto vertical */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;          /* Círculo perfecto */
+  background: #28a745;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 3.0s, transform 2.0s, box-shadow 5s; /* Animaciones suaves */
+}
+
+/* Hover de los enlaces */
+#i2-navegador a:hover {
+  background: #34d058;
+  transform: scale(1.4);      /* Aumenta un poco al pasar el mouse */
+  box-shadow: 0 0 15px 10px rgba(72, 255, 72, 0.6);
 }
