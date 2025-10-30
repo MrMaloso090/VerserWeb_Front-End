@@ -50,7 +50,7 @@ tipoIngreso.addEventListener('change', () => {
 async function cargarClientes() {
   try {
     //  Pedir al backend la lista de clientes
-    const resp = await fetch("https://verser-web-back-end-58996458362.us-central1.run.app/peticion_clientes"); // URL de backend en Cloud Run
+    const resp = await fetch("https://verserweb-back-end-58996458362.us-central1.run.app/peticion_clientes"); // URL de backend en Cloud Run
     const clientes = await resp.json();
 
     // 2) Buscar el <select> en el HTML
@@ -105,7 +105,7 @@ async function verificacion() {
   error.style.display = "none";
 
   try {
-    const resp = await fetch("https://verser-web-back-end-58996458362.us-central1.run.app/login_usuario", { //LINK DE CLOUD RUN AL BACK-END
+    const resp = await fetch("https://verserweb-back-end-58996458362.us-central1.run.app/login_usuario", { //LINK DE CLOUD RUN AL BACK-END
       method: "POST", 
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ codigo, pag })
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("🧾 JSON:", JSON.stringify(datos, null, 2));
 
       // LINK AL SERVIDOR QUE REALIZA LA CONEXION AL BACK END
-      const resp = await fetch("https://verser-web-back-end-58996458362.us-central1.run.app/guardado_en_DBs_IDR", {
+      const resp = await fetch("https://verserweb-back-end-58996458362.us-central1.run.app/guardado_en_DBs_IDR", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datos)
