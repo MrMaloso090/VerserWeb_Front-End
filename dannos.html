@@ -55,28 +55,6 @@
           </select>
         </label><br><br> 
 
-
-        <!-- jQuery + Select2 (CDN) -->
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-        <label>Cliente:
-          <select id='cliente' name="cliente" required style="width:100%">
-            <option></option>
-            <!-- lista de clientes -->
-          </select>
-        </label>
-
-        <script>
-          $(function() {
-            $('select[name="cliente"]').select2({
-              placeholder: "Selecciona un cliente",
-              allowClear: true
-            });
-          });
-        </script><br><br><br>
-        
         <label>Lente:
           <select required name="lente" id="lente">
             <option></option>
@@ -133,13 +111,9 @@
             <option value="POLY_TRANSITION">POLY TRANSITION</option>
           </select>
         </label><br><br>
-        
-        <label>Gaveta:
-          <input type="text" name="gaveta" id="gaveta" required></input>  
-        </label><br><br>
       
         <label>Observacion:
-          <input type="text" name="observacion" id="observacion" required></input>  
+          <input type="text" name="observacion" id="observacion"></input>  
         </label><br><br>
             
         

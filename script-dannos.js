@@ -150,12 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       numero_de_orden: form.numero_orden.value,
       area_responsable: form.area_responsable.value,
-      cliente: form.cliente.value,
       lente: form.lente.value,
       motivo: form.motivo.value,
       responsable: form.responsable.value,
       material: form.material.value,
-      numero_de_gaveta: form.gaveta.value.trim(),
       observaciones: form.observacion.value.trim(),
       
       usuario: sessionStorage.getItem("usuario_dannos") // SE ESPESIFICA EN CUAL WEB ESTAMOS //
