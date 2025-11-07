@@ -219,3 +219,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+// FUNCION ENCARGADA DE INTERPRETAR CUAL "AREA RESPONSABLE" ESTA SELECCIONADA, PARA GENERAR LOS DISTINTOS MOTIVOS PARA CADA AREA //
+const area_responsable = document.getElementById("area_responsable");
+const motivo = document.getElementById("motivo");
+
+area_responsable.addEventListener("change", () => {
+  const opciones = {
+    "TALLA": ["FALTA BRILLO- P GENERADOR", "RAYA-TALLÓN", "MAL GENERADO", "MAL BLOQUEADO", "MARQUILLAS", "FÓRMULA", "OTROS"],
+    "PROVEEDOR": ["CRAQUELADO", "DESPRENDIMIENTO DE CAPA", "PORO POR BASE (IMPERFECTO)", "OTRO"],
+    "COATING": ["RAYA-TALLÓN", "PORO-CHORREADO", "SIN COATING", "OTROS"],
+    "BISEL": ["RAYA-TALLÓN", "MAL BISEL", "DAÑO EN LA MONTURA", "DESBORDE", "OTROS"],
+    "AR": ["RAYA-TALLÓN", "MAL AR - MACHAS", "OTROS"],
+    "CALIDAD": ["FÓRMULA", "RAYA-TALLÓN", "OTROS"],
+    "DIGITACIÓN": ["MAL CALCULADO", "MAL SUMINISTRADO", "OTROS"],
+    "LABORATORIO": ["OTROS"]
+  };
+
+  // Limpia siempre antes de agregar nuevas opciones
+  motivo.replaceChildren(new Option("", ""));
+
+  const lista = opciones[area_responsable.value];
+  
+  if (lista) {
+    lista.forEach(opt => {
+      const option = document.createElement("option");
+      option.value = opt;
+      option.textContent = opt;
+      motivo.appendChild(option);
+    });
+  } else {
+    // Si no hay coincidencia, deja solo una opción vacía
+    motivo.replaceChildren(new Option("", ""));
+  }
+});
