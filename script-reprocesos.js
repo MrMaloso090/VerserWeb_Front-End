@@ -188,3 +188,87 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+//
+
+// FUNCION ENCARGADA DE INTERPRETAR CUAL "AREA RESPONSABLE" ESTA SELECCIONADA, PARA GENERAR LOS DISTINTOS MOTIVOS PARA CADA AREA //
+const area_responsable = document.getElementById("area_responsable");
+const motivo = document.getElementById("motivo");
+
+area_responsable.addEventListener("change", () => {
+  const opciones = {
+    "DEFECTOS_TALLA": [
+      "FALTA DE BRILLO",
+      "PUNTO GENERADOR",
+      "TALLÓN",
+      "FÓRMULA MALA",
+      "TROCADOS",
+      "AROS GENERADOR",
+      "MAL BLOQUEADOS",
+      "OTROS"
+    ],
+    "DEFECTOS_AR": [
+      "RAYA",
+      "TALLÓN",
+      "MANCHA",
+      "ARRUGA",
+      "MAL AR",
+      "OPACO",
+      "OTROS"
+    ],
+    "DEFECTOS_BISEL": [
+      "RAYA",
+      "TALLÓN",
+      "DESBORDE",
+      "MARCA CHUCK",
+      "LENTE GRANDE",
+      "LENTE PEQUEÑO",
+      "LENTE GIRADO",
+      "OTROS"
+    ],
+    "DEFECTOS_CALIDAD": [
+      "RAYA",
+      "TROCADO",
+      "TALLÓN",
+      "MAL MARCADO",
+      "OTROS"
+    ],
+    "DEFECTOS_COATING": [
+      "RAYA",
+      "TALLÓN",
+      "PIEL DE NARANJA",
+      "MAL CURADO",
+      "OPACO",
+      "PORO",
+      "CHORREADO",
+      "OTROS"
+    ],
+    "DEFECTOS_DIGITACION": [
+      "MAL DIGITADO",
+      "MAL SUMINISTRADO"
+    ],
+    "DEFECTOS_PROVEEDOR": [
+      "PORO X BASE",
+      "DESPRENDIMIENTO X BASE",
+      "CUARTEADO",
+      "OTROS"
+    ]
+  };
+
+  // Limpia siempre antes de agregar nuevas opciones
+  motivo.replaceChildren(new Option("", ""));
+
+  const lista = opciones[area_responsable.value];
+  
+  if (lista) {
+    lista.forEach(opt => {
+      const option = document.createElement("option");
+      option.value = opt;
+      option.textContent = opt;
+      motivo.appendChild(option);
+    });
+  } else {
+    // Si no hay coincidencia, deja solo una opción vacía
+    motivo.replaceChildren(new Option("", ""));
+  }
+});
+//
