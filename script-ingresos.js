@@ -173,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tipo_de_ingresos: form.tipo_ingreso.value,
       motivo_de_garantia: form.motivo_garantia?.value || null,
       orden_de_origen_de_la_garantia: form.orden_origen?.value || null,
+      nota: form.nota?.value || null,
       tipo_de_lente: form.tipo_lente.value,
       ar: form.ar.value,
       estado_de_montura: form.estado_montura.value,
