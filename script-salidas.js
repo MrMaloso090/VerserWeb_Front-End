@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tabla: "_ingresos_y_salidas", // SE ESPESIFICA EL NOMBRE DE LA TABLA DESTINO //
 
       numero_de_orden: form.numero_orden.value,
+      nota_de_salida: form.nota_salidas.value,
       
       usuario: sessionStorage.getItem("usuario_salidas") // SE ESPESIFICA EN CUAL WEB ESTAMOS //
     };
