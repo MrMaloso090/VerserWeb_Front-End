@@ -39,6 +39,12 @@ async function cargarResponsables() {
     const select = document.getElementById("responsable");
     select.innerHTML = "";
 
+    // opción vacía (default)
+    const emptyOpt = document.createElement("option");
+    emptyOpt.value = "";
+    emptyOpt.textContent = "";
+    select.appendChild(emptyOpt);
+
     // 3) Recorrer los responsables recibidos y crear <option>
     responsables.forEach(c => {
       const opt = document.createElement("option");

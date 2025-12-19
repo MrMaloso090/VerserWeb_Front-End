@@ -57,6 +57,12 @@ async function cargarClientes() {
     const select = document.getElementById("cliente");
     select.innerHTML = "";
 
+    // opción vacía (default)
+    const emptyOpt = document.createElement("option");
+    emptyOpt.value = "";
+    emptyOpt.textContent = "";
+    select.appendChild(emptyOpt);
+
     // 3) Recorrer los clientes recibidos y crear <option>
     clientes.forEach(c => {
       const opt = document.createElement("option");
