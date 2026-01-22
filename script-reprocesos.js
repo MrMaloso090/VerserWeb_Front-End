@@ -203,8 +203,7 @@ area_responsable.addEventListener("change", () => {
       "FÓRMULA MALA",
       "TROCADOS",
       "AROS GENERADOR",
-      "MAL BLOQUEADOS",
-      "OTROS"
+      "MAL BLOQUEADOS"
     ],
     "DEFECTOS_AR": [
       "RAYA",
@@ -212,8 +211,7 @@ area_responsable.addEventListener("change", () => {
       "MANCHA",
       "ARRUGA",
       "MAL AR",
-      "OPACO",
-      "OTROS"
+      "OPACO"
     ],
     "DEFECTOS_BISEL": [
       "RAYA",
@@ -222,15 +220,13 @@ area_responsable.addEventListener("change", () => {
       "MARCA CHUCK",
       "LENTE GRANDE",
       "LENTE PEQUEÑO",
-      "LENTE GIRADO",
-      "OTROS"
+      "LENTE GIRADO"
     ],
     "DEFECTOS_CALIDAD": [
       "RAYA",
       "TROCADO",
       "TALLÓN",
-      "MAL MARCADO",
-      "OTROS"
+      "MAL MARCADO"
     ],
     "DEFECTOS_COATING": [
       "RAYA",
@@ -239,19 +235,19 @@ area_responsable.addEventListener("change", () => {
       "MAL CURADO",
       "OPACO",
       "PORO",
-      "CHORREADO",
-      "OTROS"
+      "CHORREADO"
     ],
     "DEFECTOS_DIGITACION": [
       "MAL DIGITADO",
-      "MAL SUMINISTRADO"
+      "MAL SUMINISTRADO",
+      "ERROR DE INGRESO"
     ],
     "DEFECTOS_PROVEEDOR": [
       "PORO X BASE",
       "DESPRENDIMIENTO X BASE",
-      "CUARTEADO",
-      "OTROS"
-    ]
+      "CUARTEADO"
+    ],
+    "DEFECTOS_INGRESOS":["ERROR DE INGRESO"]
   };
 
   // Limpia siempre antes de agregar nuevas opciones
@@ -266,6 +262,16 @@ area_responsable.addEventListener("change", () => {
       option.textContent = opt;
       motivo.appendChild(option);
     });
+
+    // AGREGA LA OPCION 'OTRO' EN TODAS LAS AREAS EN CASO DE SER EL USUARIO INDICADO.
+    const usuario = sessionStorage.getItem("usuario_reprocesos");
+    if (usuario === "Coordinación") {   // NOMBRE DEL USUARIO CON ACCESO A ESTA OPCION.
+      const optionExtra = document.createElement("option");
+      optionExtra.value = "OTROS";
+      optionExtra.textContent = "OTROS";
+      motivo.appendChild(optionExtra);
+    }
+
   } else {
     // Si no hay coincidencia, deja solo una opción vacía
     motivo.replaceChildren(new Option("", ""));

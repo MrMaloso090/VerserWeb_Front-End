@@ -233,14 +233,15 @@ const motivo = document.getElementById("motivo");
 
 area_responsable.addEventListener("change", () => {
   const opciones = {
-    "TALLA": ["FALTA BRILLO- P GENERADOR", "RAYA-TALLÓN", "MAL GENERADO", "MAL BLOQUEADO", "MARQUILLAS", "FÓRMULA", "OTROS"],
-    "PROVEEDOR": ["CRAQUELADO", "DESPRENDIMIENTO DE CAPA", "PORO POR BASE (IMPERFECTO)", "OTRO"],
-    "COATING": ["RAYA-TALLÓN", "PORO-CHORREADO", "SIN COATING", "OTROS"],
-    "BISEL": ["RAYA-TALLÓN", "MAL BISEL", "DAÑO EN LA MONTURA", "DESBORDE", "OTROS"],
-    "AR": ["RAYA-TALLÓN", "MAL AR - MACHAS", "OTROS"],
-    "CALIDAD": ["FÓRMULA", "RAYA-TALLÓN", "OTROS"],
-    "DIGITACIÓN": ["MAL CALCULADO", "MAL SUMINISTRADO", "OTROS"],
-    "LABORATORIO": ["OTROS"]
+    "TALLA": ["FALTA BRILLO- P GENERADOR", "RAYA-TALLÓN", "MAL GENERADO", "MAL BLOQUEADO", "MARQUILLAS", "FÓRMULA"],
+    "PROVEEDOR": ["CRAQUELADO", "DESPRENDIMIENTO DE CAPA", "PORO POR BASE (IMPERFECTO)"],
+    "COATING": ["RAYA-TALLÓN", "PORO-CHORREADO", "SIN COATING"],
+    "BISEL": ["RAYA-TALLÓN", "MAL BISEL", "DAÑO EN LA MONTURA", "DESBORDE"],
+    "AR": ["RAYA-TALLÓN", "MAL AR - MACHAS"],
+    "CALIDAD": ["FÓRMULA", "RAYA-TALLÓN"],
+    "DIGITACIÓN": ["MAL CALCULADO", "MAL SUMINISTRADO"],
+    "LABORATORIO": ["OTROS"],
+    "INGRESOS": ["INGRESO"]
   };
 
   // Limpia siempre antes de agregar nuevas opciones
@@ -255,6 +256,16 @@ area_responsable.addEventListener("change", () => {
       option.textContent = opt;
       motivo.appendChild(option);
     });
+
+    // AGREGA LA OPCION 'OTRO' EN TODAS LAS AREAS EN CASO DE SER EL USUARIO INDICADO.
+    const usuario = sessionStorage.getItem("usuario_dannos");
+    if (usuario === "Coordinación" && area_responsable.value !== "LABORATORIO") {   // NOMBRE DEL USUARIO CON ACCESO A ESTA OPCION. // EVITA LA DUPLICACION EN LABORATORIO.
+      const optionExtra = document.createElement("option");
+      optionExtra.value = "OTROS";
+      optionExtra.textContent = "OTROS";
+      motivo.appendChild(optionExtra);
+    }
+
   } else {
     // Si no hay coincidencia, deja solo una opción vacía
     motivo.replaceChildren(new Option("", ""));
