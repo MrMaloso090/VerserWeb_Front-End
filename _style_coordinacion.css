@@ -1,0 +1,132 @@
+body {
+    background-color: #1F201D;
+    color: #F3FEF0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* centra horizontal */
+}
+
+form {
+    width: 600px;
+    background-color: #2B2C29;
+    padding: 20px;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius:0px ;
+    margin: 0px;
+    display: flex;
+}
+
+select, input {
+    color: #F3FEF0;               /* color del texto */
+    background-color: #2C3228;  /* color de fondo del recuadro */
+    border: 1px solid #1F201D;  
+    width: 600px;
+    height: 30px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    margin-top: 6px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+}
+
+nav {
+    display: flex;
+    width: 200px;
+    height: 100%;
+    background-color: #2B2C29;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius:6px ;
+}
+
+nav a {
+    text-decoration: none;
+    display: flex;
+    align-items: flex-end;
+    color: #F3FEF0;
+    background-color: #1F201D;
+    border: 1px solid #1F201D;
+    border-top-left-radius: 6px;
+    height: 25px;
+    padding: 10px;
+    margin: 5px;
+    transition: all 2s;
+}
+
+nav a:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.02);
+    background: linear-gradient(to right, #1F201D, #262724);
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;   
+    margin: 0;
+    width: 100%;
+}
+
+.full {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    background-color: #2B2C29;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0px;
+}
+
+hr {
+    width: 100%;
+    height: 0.25px;
+    background-color: #F3FEF0;
+}
+
+h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.select2-results__option {
+    color: #2C3228;
+}
+
+.login {
+    width: 600px;
+}
+
+.login-container {
+    width: 250px;
+    background-color: #1F201D;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 10px;
+    padding-right: 20px;
+    font-size: large;
+}
+
+.login-container input {
+  width: 100%;
+}
+
+#enviar {
+    transform: translateX(550px);
+}
+
+#cerrar {
+    background-color: #1F201D;
+    color: #F3FEF0;
+    border: 5px solid #1F201D;
+    border-radius: 2px;
+}
+
+#cerrar:hover {
+    transform: scale(1.02);
+}

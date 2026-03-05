@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>___registro_de_control_bisel</title>
+  <link rel="stylesheet" href="_style_coordinacion.css"> <!-- CONECCION CON EL .CSS -->
+</head>
+<body>
+  <!-- COMIENZO DEL CODIGO -->
+   <div class="full">
+    <h1>BISEL</h1>
+    <hr>
+
+    <div class="container">
+
+      <div>
+        <nav>
+          <ul>
+            <li><a href="_ar.html">AR</a></li>
+            <li><a href="_bisel.html">Bisel</a></li>
+            <li><a href="_calidad.html">Calidad</a></li>
+            <li><a href="_digitacion.html">Digitacion</a></li>
+            <li><a href="_facturacion.html">Facturacion</a></li>
+            <li><a href="_ingresos.html">Ingresos</a></li>
+            <li><a href="_talla.html">Talla</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--LOGIN-->
+      <div class="login" id="login">
+        <div class="login-container">
+          Inicio de Sesion:
+          <input type="password" id="codigo" name="passcode" placeholder="Ingresa tu código">
+          <button onclick="verificacion()" id="iniciar">Entrar</button>
+          <p id="error" style="color:red; display:none;">Código incorrecto</p>
+        </div>
+      </div>
+      
+      <!-- CUESTIONARIO -->
+      <form id="formulario" style="display:none;">
+
+        <label>RESPONSABLE:
+          <select name="responsable" required>
+            <option></option>
+          </select>
+        </label><br>
+        <!-- jQuery + Select2 (CDN) -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script>
+          $(function() {
+            $('select[name="responsable"]').select2({
+              placeholder: "",
+              allowClear: true
+            });
+          });
+        </script><br><br>
+
+        <label>BREAK:
+          <select name="break" required>
+            <option></option>
+            <option value="DESAYUNO(25)">DESAYUNO(25)</option>
+            <option value="ALMUERZO(45)">ALMUERZO(45)</option>
+            <option value="REFRIGERIO(25)">REFRIGERIO(25)</option>
+            <option value="CENA(45)">CENA(45)</option>
+          </select>
+        </label><br>
+
+        <label>CALIBRACION/LIMPIEZA/SOLUCION DE NOVEDADES:
+          <input type="number" name="calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" required>
+        </label><br>
+
+        <label>CANTIDAD DE BISEL ESPECIAL:
+          <input type="number" name="cantidad_de_bisel_especial" min="0" step="1" required>
+        </label><br>
+
+        <label>CANTIDAD DE BISEL GENERAL:
+          <input type="number" name="cantidad_de_bisel_general" min="0" step="1" required>
+        </label><br>
+
+        <label>MONTAJE:
+          <input type="number" name="montaje" min="0" step="1" required>
+        </label><br>
+
+        <label>CANTIDAD DE ARREGLOS:
+          <input type="number" name="cantidad_de_arreglos" min="0" step="1" required>
+        </label><br>
+
+        <label>CANTIDAD DE LIMPIEZA NORMAL:
+          <input type="number" name="cantidad_de_limpieza_normal" min="0" step="1" required>
+        </label><br>
+
+        <label>LIMPIEZA DE RANURA:
+          <input type="number" name="limpieza_de_ranura" min="0" step="1" required>
+        </label><br>
+
+        <label>ENSAMBLE DE TRES PIEZAS:
+          <input type="number" name="ensamble_de_tres_piezas" min="0" step="1" required>
+        </label><br>
+
+        <label>CANTIDAD DE BLOQUEADOS:
+          <input type="number" name="cantidad_de_bloqueados" min="0" step="1" required>
+        </label><br>
+
+        <label>OBSERVACIONES:
+          <input type="text" name="observaciones" required>
+        </label><br>
+
+        <button type="submit" id="enviar">Enviar</button>
+        <p id="respuesta"></p>
+
+        <h4 id="bienvenida" style="display: none;"></h4>
+        <button onclick="cerrarSesion()" id="cerrar">Cerrar Sesión</button>
+      </form>
+    </div>
+   </div>
+    
+  <!-- CIERRE DEL CODIGO -->
+  <script src="_script.js"></script> <!-- CONECCION CON EL .JS -->
+</body>
+</html>
