@@ -8,7 +8,7 @@ tipoIngreso.addEventListener('change', () => {
   const orden = document.getElementById('orden_origen');
 
   // Si se selecciona un tipo distinto de "" y "NORMAL"
-  if (tipoIngreso.value !== "" && tipoIngreso.value !== "NORMAL" && tipoIngreso.value !== "DAÑO AGENCIA") {
+  if (tipoIngreso.value !== "" && tipoIngreso.value !== "NORMAL" && tipoIngreso.value !== "NORMAL AGENCIA CALI" && tipoIngreso.value !== "NORMAL AGENCIA CUCUTA") {
     camposGarantia.style.display = "block";  // Muestra el bloque de campos
     document.getElementById('motivo_garantia').required = true;   // Activa el "required"
     document.getElementById('orden_origen').required = true;      // Activa el "required"
@@ -252,4 +252,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+});
+
+
+// PRESELECCIONA 'ESTADO MONTURA' Y 'CONDICION ESPECIAL' TRAS SELECCIONAR UNAS OPCIONES EN CONCRETO EN ''TIPO DE INGRESO' //
+document.getElementById("tipo_ingreso").addEventListener("change", function() {
+    if (["NORMAL AGENCIA CALI","NORMAL AGENCIA CUCUTA","DAÑO AGENCIA CALI", "DAÑO AGENCIA CUCUTA"].includes(this.value)) {
+        document.getElementById("estado_montura").value = "SIN MONTURA";
+        document.getElementById("condicion_especial").value = "SIN MONTURA - SIN BISEL";
+    }
 });
