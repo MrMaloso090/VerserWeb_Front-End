@@ -40,7 +40,7 @@
       <!-- CUESTIONARIO -->
       <form id="formulario" style="display:none;">
         
-        <label>Responsable:
+        <label>RESPONSABLE:
           <select name="responsable" required>
             <option></option>
           </select>
@@ -58,8 +58,8 @@
           });
         </script><br><br>
 
-        <label>Break:
-          <select name="break" required>
+        <label>BREAK:
+          <select name="break">
             <option></option>
             <option value="DESAYUNO(25)">DESAYUNO(25)</option>
             <option value="ALMUERZO(45)">ALMUERZO(45)</option>
@@ -68,41 +68,79 @@
           </select>
         </label><br>
 
-        <label>Tratamiento:
-          <select name="tratamiento" required>
+        <label>TRATAMIENTO:
+          <select name="tratamiento" id="tratamiento" required>
             <option></option>
             <option value="AZUL">AZUL</option>
             <option value="VERDE">VERDE</option>
             <option value="TERMINADOS">TERMINADOS</option>
+            <option value="REPROCESOS">REPROCESOS</option>
           </select>
         </label><br>
 
-        <label>Calibracion/ limpieza/ solucion de novedades:
-          <input type="number" name="calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" required>
+        <label>CALIBRACION/LIMPIEZA DE MAQUINAS/SOLUCION DE NOVEDADES:
+          <input type="number" name="calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" max="60">
         </label><br>
 
-        <label>Cantidad de lentes por ciclo:
-          <input type="number" name="cantidad_de_lentes_por_ciclo" min="0" step="1" required>
+        <label id="cdlpc">CANTIDAD DE LENTES POR CICLO:
+          <input type="number" name="cantidad_de_lentes_por_ciclo" id="cantidad_de_lentes_por_ciclo" min="0" step="1" required>
+          <br>
+        </label>
+
+        <label id="ndc">NUMERO DE CICLO:
+          <select name="numero_del_ciclo" id="numero_del_ciclo" required>
+            <option></option>
+            <option value="#1 CX">#1 CX</option>
+            <option value="#1 CC">#1 CC</option>
+            <option value="#2 CX">#2 CX</option>
+            <option value="#2 CC">#2 CC</option>
+            <option value="#3 CX">#3 CX</option>
+            <option value="#3 CC">#3 CC</option>
+            <option value="#4 CX">#4 CX</option>
+            <option value="#4 CC">#4 CC</option>
+            <option value="#5 CX">#5 CX</option>
+            <option value="#5 CC">#5 CC</option>
+            <option value="#6 CX">#6 CX</option>
+            <option value="#6 CC">#6 CC</option>
+            <option value="#7 CX">#7 CX</option>
+            <option value="#7 CC">#7 CC</option>
+            <option value="#8 CX">#8 CX</option>
+            <option value="#8 CC">#8 CC</option>
+            <option value="#9 CX">#9 CX</option>
+            <option value="#9 CC">#9 CC</option>
+            <option value="#10 CX">#10 CX</option>
+            <option value="#10 CC">#10 CC</option>
+            <option value="#11 CX">#11 CX</option>
+            <option value="#11 CC">#11 CC</option>
+            <option value="#12 CX">#12 CX</option>
+            <option value="#12 CC">#12 CC</option>
+            <option value="#13 CX">#13 CX</option>
+            <option value="#13 CC">#13 CC</option>
+            <option value="#14 CX">#14 CX</option>
+            <option value="#14 CC">#14 CC</option>
+          </select>
+          <br>
+        </label>
+        <script>
+          $(function() {
+            $('select[name="numero_del_ciclo"]').select2({
+              placeholder: "",
+              allowClear: true
+            });
+          });
+        </script><br><br>
+
+        <label id="cdlr" style="display: none;">CANTIDAD DE LENTES REPROCESADOS:
+          <input type="number" name="cantidad_de_lentes_reprocesados" id="cantidad_de_lentes_reprocesados" min="0" step="1" style="display: none;" required>
+          <br>
+        </label>
+
+        <label>INVENTARIO:
+          <input type="text" name="inventario">
         </label><br>
 
-        <label>Numero del ciclo:
-          <input type="number" name="numero_del_ciclo" min="0" step="1" required>
-        </label><br>
-
-        <label>Hora de inicio:
-          <input type="time" name="hora_de_inicio" required>
-        </label><br>
-
-        <label>Hora de salida:
-          <input type="time" name="hora_de_salida" required>
-        </label><br>
-
-        <label>Inventario:
-          <input type="text" name="inventario" required>
-        </label><br>
-
-        <label>Observaciones:
-          <input type="text" name="observaciones" required>
+        <label>OBSERVACIONES:
+          <input type="text" name="observaciones">
         </label><br>
 
         <button type="submit" id="enviar">Enviar</button>

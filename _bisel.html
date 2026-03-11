@@ -59,7 +59,7 @@
         </script><br><br>
 
         <label>BREAK:
-          <select name="break" required>
+          <select name="break">
             <option></option>
             <option value="DESAYUNO(25)">DESAYUNO(25)</option>
             <option value="ALMUERZO(45)">ALMUERZO(45)</option>
@@ -69,43 +69,47 @@
         </label><br>
 
         <label>CALIBRACION/LIMPIEZA/SOLUCION DE NOVEDADES:
-          <input type="number" name="calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" required>
+          <input type="number" name="calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" max="60">
         </label><br>
 
         <label>CANTIDAD DE BISEL ESPECIAL:
-          <input type="number" name="cantidad_de_bisel_especial" min="0" step="1" required>
+          <input type="number" name="cantidad_de_bisel_especial" min="0" step="1" max="25">
         </label><br>
 
         <label>CANTIDAD DE BISEL GENERAL:
-          <input type="number" name="cantidad_de_bisel_general" min="0" step="1" required>
+          <input type="number" name="cantidad_de_bisel_general" min="0" step="1" max="25">
         </label><br>
 
         <label>MONTAJE:
-          <input type="number" name="montaje" min="0" step="1" required>
+          <input type="number" name="montaje" min="0" step="1" max="25">
         </label><br>
 
         <label>CANTIDAD DE ARREGLOS:
-          <input type="number" name="cantidad_de_arreglos" min="0" step="1" required>
+          <input type="number" name="cantidad_de_arreglos" min="0" step="1" max="25">
         </label><br>
 
         <label>CANTIDAD DE LIMPIEZA NORMAL:
-          <input type="number" name="cantidad_de_limpieza_normal" min="0" step="1" required>
+          <input type="number" name="cantidad_de_limpieza_normal" min="0" step="1" max="25">
         </label><br>
 
         <label>LIMPIEZA DE RANURA:
-          <input type="number" name="limpieza_de_ranura" min="0" step="1" required>
+          <input type="number" name="limpieza_de_ranura" min="0" step="1" max="25">
         </label><br>
 
         <label>ENSAMBLE DE TRES PIEZAS:
-          <input type="number" name="ensamble_de_tres_piezas" min="0" step="1" required>
+          <input type="number" name="ensamble_de_tres_piezas" min="0" step="1" max="25">
         </label><br>
 
         <label>CANTIDAD DE BLOQUEADOS:
-          <input type="number" name="cantidad_de_bloqueados" min="0" step="1" required>
+          <input type="number" name="cantidad_de_bloqueados" min="0" step="1" max="25">
+        </label><br>
+
+        <label>INVENTARIO:
+          <input type="text" name="inventario">
         </label><br>
 
         <label>OBSERVACIONES:
-          <input type="text" name="observaciones" required>
+          <input type="text" name="observaciones">
         </label><br>
 
         <button type="submit" id="enviar">Enviar</button>

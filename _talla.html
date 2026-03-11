@@ -59,7 +59,7 @@
         </script><br><br>
 
         <label>BREAK:
-          <select name="break" required>
+          <select name="break">
             <option></option>
             <option value="DESAYUNO(25)">DESAYUNO(25)</option>
             <option value="ALMUERZO(45)">ALMUERZO(45)</option>
@@ -69,27 +69,31 @@
         </label><br>
 
         <label>CALIBRACION/LIMPIEZA/SOLUCION DE NOVEDADES:
-          <input type="number" name="calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" required>
+          <input type="number" name="calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" max="60">
         </label><br>
 
         <label>CANTIDAD DE ENCINTADO:
-          <input type="number" name="cantidad_de_encintado" min="0" step="1" required>
+          <input type="number" name="cantidad_de_encintado" min="0" step="1" max="120">
         </label><br>
 
         <label>CANTIDAD DE BLOQUEO:
-          <input type="number" name="cantidad_de_bloqueo" min="0" step="1" required>
+          <input type="number" name="cantidad_de_bloqueo" min="0" step="1" max="35">
         </label><br>
 
         <label>CANTIDAD DE PULIDO:
-          <input type="number" name="cantidad_de_pulido" required>
+          <input type="number" name="cantidad_de_pulido" min="0" step="1" max="35">
         </label><br>
 
         <label>REPROCESOS:
-          <input type="number" name="reprocesos" required>
+          <input type="number" name="reprocesos" min="0" step="1" max="35">
+        </label><br>
+
+        <label>INVENTARIO:
+          <input type="text" name="inventario">
         </label><br>
 
         <label>OBSERVACIONES:
-          <input type="text" name="observaciones" required>
+          <input type="text" name="observaciones">
         </label><br>
 
         <button type="submit" id="enviar">Enviar</button>

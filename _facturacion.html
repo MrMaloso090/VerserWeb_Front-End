@@ -59,7 +59,7 @@
         </script><br><br>
 
         <label>BREAK:
-          <select name="break" required>
+          <select name="break">
             <option></option>
             <option value="DESAYUNO(25)">DESAYUNO(25)</option>
             <option value="ALMUERZO(45)">ALMUERZO(45)</option>
@@ -69,23 +69,23 @@
         </label><br>
 
         <label>OTRAS ACTIVIDADES:
-          <input type="number" name="otras_actividades" min="0" step="1" required>
+          <input type="number" name="otras_actividades" min="0" step="1" max="60">
         </label><br>
 
         <label>CANTIDAD DE FACTURADOS:
-          <input type="number" name="cantidad_de_facturados" min="0" step="1" required>
+          <input type="number" name="cantidad_de_facturados" min="0" step="1" max="100">
         </label><br>
 
         <label>CANTIDAD DE EMPACADOS:
-          <input type="number" name="cantidad_de_empacados" min="0" step="1" required>
+          <input type="number" name="cantidad_de_empacados" min="0" step="1" max="100">
         </label><br>
 
         <label>INVENTARIO:
-          <input type="text" name="inventario" required>
+          <input type="text" name="inventario">
         </label><br>
 
         <label>OBSERVACIONES:
-          <input type="text" name="observaciones" required>
+          <input type="text" name="observaciones">
         </label><br>
 
         <button type="submit" id="enviar">Enviar</button>

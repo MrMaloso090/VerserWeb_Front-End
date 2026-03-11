@@ -59,7 +59,7 @@
         </script><br><br>
 
         <label>BREAK:
-          <select name="break" required>
+          <select name="break">
             <option></option>
             <option value="DESAYUNO(25)">DESAYUNO(25)</option>
             <option value="ALMUERZO(45)">ALMUERZO(45)</option>
@@ -69,35 +69,35 @@
         </label><br>
 
         <label>CALIBRACION/LIMPIEZA/SOLUCION DE NOVEDADES:
-          <input type="number" name="tiempo_calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" required>
+          <input type="number" name="tiempo_calibracion_limpieza_de_maquinas_solucion_de_novedades" min="0" step="1" max="60">
         </label><br>
 
         <label>CONTROL INICIAL DE COATING:
-          <input type="number" name="control_inicial_de_coating" min="0" step="1" required>
+          <input type="number" name="control_inicial_de_coating" min="0" step="1" max="100">
         </label><br>
 
         <label>CONTROL INICIAL DE BISEL:
-          <input type="number" name="control_inicial_de_bisel" min="0" step="1" required>
+          <input type="number" name="control_inicial_de_bisel" min="0" step="1" max="100">
         </label><br>
 
         <label>CONTROL FINAL:
-          <input type="number" name="control_final" min="0" step="1" required>
+          <input type="number" name="control_final" min="0" step="1" max="100">
         </label><br>
 
         <label>EMPAQUETADO:
-          <input type="number" name="empaquetado" min="0" step="1" required>
+          <input type="number" name="empaquetado" min="0" step="1" max="150">
         </label><br>
 
         <label>REPROCESOS:
-          <input type="number" name="reprocesos" min="0" step="1" required>
+          <input type="number" name="reprocesos" min="0" step="1" max="100">
         </label><br>
 
         <label>INVENTARIO:
-          <input type="text" name="inventario" required>
+          <input type="text" name="inventario">
         </label><br>
 
         <label>OBSERVACIONES:
-          <input type="text" name="observaciones" required>
+          <input type="text" name="observaciones">
         </label><br>
 
         <button type="submit" id="enviar">Enviar</button>
