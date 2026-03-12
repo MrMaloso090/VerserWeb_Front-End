@@ -8,6 +8,7 @@ formulario.addEventListener('submit', async function(event) {
   const formData = new FormData(formulario);
   const data = Object.fromEntries(formData.entries());
   data.titulo = document.title;
+  data.usuario = sessionStorage.getItem(usuario_dinamico)
   console.log(data);
 
   try {
