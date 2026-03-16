@@ -105,7 +105,7 @@ async function cargarResponsables() {
   }
 }
 // 4) Ejecutar la carga al abrir la página
-if(document.title ==! '___registro_de_control_inventario'){
+if(document.title !== '___registro_de_control_inventario'){
   cargarResponsables();
 }
 
@@ -222,34 +222,36 @@ if(document.title === '___registro_de_control_ar'){
 }
 
 // FUNCION PARA INVENTARIO, QUE MUESTRA Y OCULTA CAMPOS SEGUN EL AREA SELECCIONADA //
-document.getElementById("area").addEventListener("change", function() {
-  const valor = this.value;
+if(document.title === '___registro_de_control_inventario'){
+  document.getElementById("area").addEventListener("change", function() {
+    const valor = this.value;
 
-  const area_div = document.getElementById('area-div');
-  area_div.querySelectorAll('input, select, textarea').forEach(el => {
-    el.required = false;
-  });
-
-  document.querySelectorAll('.ocultar').forEach(div => {
-    div.style.display = 'none';
-  });
-
-  if (valor === '') return;
-  if (valor === 'AR') seleccion = document.getElementById('ar-div');
-  if (valor === 'AUTOREGISTRO') seleccion = document.getElementById('autoregistro-div');
-  if (valor === 'BISEL') seleccion = document.getElementById('bisel-div');
-  if (valor === 'COATING') seleccion = document.getElementById('coating-div');
-  if (valor === 'DIGITACION') seleccion = document.getElementById('digitacion-div');
-  if (valor === 'INS. INICIAL') seleccion = document.getElementById('ins-inicial-div');
-  if (valor === 'INS. FINAL') seleccion = document.getElementById('ins-final-div');
-  if (valor === 'TALLA') seleccion = document.getElementById('talla-div');
-  if (valor === 'RECEPCION') seleccion = document.getElementById('recepcion-div');
-
-  if (seleccion){
-    seleccion.style.display = 'block';
-
-    seleccion.querySelectorAll('input, select, textarea').forEach(el => {
-      el.required = true;
+    const area_div = document.getElementById('area-div');
+    area_div.querySelectorAll('input, select, textarea').forEach(el => {
+      el.required = false;
     });
-  }
-})
+
+    document.querySelectorAll('.ocultar').forEach(div => {
+      div.style.display = 'none';
+    });
+
+    if (valor === '') return;
+    if (valor === 'AR') seleccion = document.getElementById('ar-div');
+    if (valor === 'AUTOREGISTRO') seleccion = document.getElementById('autoregistro-div');
+    if (valor === 'BISEL') seleccion = document.getElementById('bisel-div');
+    if (valor === 'COATING') seleccion = document.getElementById('coating-div');
+    if (valor === 'DIGITACION') seleccion = document.getElementById('digitacion-div');
+    if (valor === 'INS. INICIAL') seleccion = document.getElementById('ins-inicial-div');
+    if (valor === 'INS. FINAL') seleccion = document.getElementById('ins-final-div');
+    if (valor === 'TALLA') seleccion = document.getElementById('talla-div');
+    if (valor === 'RECEPCION') seleccion = document.getElementById('recepcion-div');
+
+    if (seleccion){
+      seleccion.style.display = 'block';
+
+      seleccion.querySelectorAll('input, select, textarea').forEach(el => {
+        el.required = true;
+      });
+    }
+  })
+}
