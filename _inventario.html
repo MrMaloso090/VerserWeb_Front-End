@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>___registro_de_control_inventario</title>
+  <link rel="stylesheet" href="_style_coordinacion.css"> <!-- CONECCION CON EL .CSS -->
+</head>
+<body>
+  <!-- COMIENZO DEL CODIGO -->
+   <div class="full">
+    <h1>INVENTARIO</h1>
+    <hr>
+
+    <div class="container">
+
+      <div>
+        <nav>
+          <ul>
+            <li><a href="_ar.html">AR</a></li>
+            <li><a href="_bisel.html">Bisel</a></li>
+            <li><a href="_calidad.html">Calidad</a></li>
+            <li><a href="_digitacion.html">Digitacion</a></li>
+            <li><a href="_facturacion.html">Facturacion</a></li>
+            <li><a href="_ingresos.html">Ingresos</a></li>
+            <li><a href="_talla.html">Talla</a></li>
+            <li><a href="_coating.html">Coating</a></li>
+            <li><a href="_inventario.html">Inventario</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--LOGIN-->
+      <div class="login" id="login">
+        <div class="login-container">
+          Inicio de Sesion:
+          <input type="password" id="codigo" name="passcode" placeholder="Ingresa tu código">
+          <button onclick="verificacion()" id="iniciar">Entrar</button>
+          <p id="error" style="color:red; display:none;">Código incorrecto</p>
+        </div>
+      </div>
+      
+      <!-- CUESTIONARIO -->
+      <form id="formulario" style="display:none;">
+
+        <label>AREA:
+            <select name="area" id="area" required>
+                <option value=""></option>
+                <option value="AR">AR</option>
+                <option value="AUTOREGISTRO">AUTOREGISTRO</option>
+                <option value="BISEL">BISEL</option>
+                <option value="COATING">COATING</option>
+                <option value="DIGITACION">DIGITACION</option>
+                <option value="INS. INICIAL">INS. INICIAL</option>
+                <option value="INS. FINAL">INS. FINAL</option>
+                <option value="TALLA">TALLA</option>
+                <option value="RECEPCION">RECEPCION</option>
+            </select>
+        </label><br>
+
+        <!-- COMIENZO DE LA SECCION DE 'DIVs' PARA CADA AREA -->
+        <div id="area-div">
+            <div id="ar-div" style="display:none;" class="ocultar">
+
+                <label>MC380
+                    <input type="number" name="mc380" min="0" step="1">
+                </label><br>
+
+                <label>LAVADO
+                    <input type="number" name="lavado" min="0" step="1">
+                </label>
+
+                <label>HORNO
+                    <input type="number" name="horno" min="0" step="1">
+                </label>
+
+                <label>REPROCESOS
+                    <input type="number" name="reprocesos" min="0" step="1">
+                </label>
+            </div>
+
+
+            <div id="autoregistro-div" style="display:none;" class="ocultar">
+
+                <label>ENVIADOS FACTURACION
+                    <input type="number" name="enviados_facturacion" min="0" step="1">
+                </label><br>
+
+                <label>DIGITACION
+                    <input type="number" name="digitacion_autoregistro" min="0" step="1">
+                </label>
+
+                <label>TALLA
+                    <input type="number" name="talla_autoregistro" min="0" step="1">
+                </label>
+
+                <label>COATING
+                    <input type="number" name="coating_autoregistro" min="0" step="1">
+                </label>
+
+            </div>
+
+
+            <div id="bisel-div" style="display:none;" class="ocultar">
+                <label>BLOQUEADORA
+                    <input type="number" name="bloqueadora" min="0" step="1">
+                </label><br>
+
+                <label>LIMPIEZA
+                    <input type="number" name="limpieza" min="0" step="1">
+                </label>
+
+                <label>COLOR
+                    <input type="number" name="color" min="0" step="1">
+                </label>
+
+                <label>REPROCESOS
+                    <input type="number" name="reprocesos_bisel" min="0" step="1">
+                </label>
+            </div>
+
+
+            <div id="coating-div" style="display:none;" class="ocultar">
+                <label>PENDIENTES
+                    <input type="number" name="pendientes_coating" min="0" step="1">
+                </label><br>
+
+                <label>REPROCESOS
+                    <input type="number" name="reprocesos_coating" min="0" step="1">
+                </label>
+            </div>
+
+
+            <div id="digitacion-div" style="display:none;" class="ocultar">
+                <label>PENDIENTE POR DIGITAR
+                    <input type="number" name="pendiente_por_digitar" min="0" step="1">
+                </label><br>
+
+                <label>PENDIENTE SIN MATERIA PRIMA
+                    <input type="number" name="pendiente_sin_materia_prima" min="0" step="1">
+                </label>
+
+                <label>PENDIENTE POR INFORMACIÓN
+                    <input type="number" name="pendiente_por_informacion" min="0" step="1">
+                </label>
+
+                <label>PENDIENTE POR PEDIR MAQUILA
+                    <input type="number" name="pendiente_por_pedir_maquila" min="0" step="1">
+                </label>
+
+                <label>PENDIENTE POR SUMINISTRAR
+                    <input type="number" name="pendiente_por_suministrar" min="0" step="1">
+                </label>
+
+                <label>PENDIENTES POR INGRESAR Y ENGAVETAR
+                    <input type="number" name="pendientes_por_ingresar_y_engavetar" min="0" step="1">
+                </label>
+            </div>
+
+
+            <div id="ins-inicial-div" style="display:none;" class="ocultar">
+                <label>PENDIENTES
+                    <input type="number" name="pendientes_ins_inicial" min="0" step="1">
+                </label><br>
+
+                <label>REPROCESOS
+                    <input type="number" name="reprocesos_ins_inicial" min="0" step="1">
+                </label>
+            </div>
+
+
+            <div id="ins-final-div" style="display:none;" class="ocultar">
+                <label>PENDIENTES
+                    <input type="number" name="pendientes_ins_final" min="0" step="1">
+                </label><br>
+
+                <label>REPROCESOS
+                    <input type="number" name="reprocesos_ins_final" min="0" step="1">
+                </label>
+            </div>
+
+
+            <div id="recepcion-div" style="display:none;" class="ocultar">
+                <label>PENDIENTES POR FACTURAR
+                    <input type="number" name="pendientes_por_facturar" min="0" step="1">
+                </label><br>
+
+                <label>PENDIENTE POR INFORMACIÓN
+                    <input type="number" name="pendiente_por_informacion_recepcion" min="0" step="1">
+                </label>
+
+                <label>PENDIENTE POR NOVEDADES
+                    <input type="number" name="pendiente_por_novedades" min="0" step="1">
+                </label>
+
+                <label>SEDE CENTRO
+                    <input type="number" name="sede_centro" min="0" step="1">
+                </label>
+            </div>
+
+
+            <div id="talla-div" style="display:none;" class="ocultar">
+                <label>PENDIENTES POR ENCINTAR
+                    <input type="number" name="pendientes_por_encintar" min="0" step="1">
+                </label><br>
+
+                <label>ENCINTADOS
+                    <input type="number" name="encintados" min="0" step="1">
+                </label>
+
+                <label>BLOQUEADOS
+                    <input type="number" name="bloqueados" min="0" step="1">
+                </label>
+
+                <label>GENERADOS
+                    <input type="number" name="generados" min="0" step="1">
+                </label>
+
+                <label>PULIDOS
+                    <input type="number" name="pulidos" min="0" step="1">
+                </label>
+
+                <label>REPROCESOS
+                    <input type="number" name="reprocesos_talla" min="0" step="1">
+                </label>
+            </div>
+        </div>
+        <!-- FINAL DE LA SECCION DE 'DIVs' PARA CADA AREA -->
+
+        <button type="submit" id="enviar">Enviar</button>
+        <p id="respuesta"></p>
+        
+        <h4 id="bienvenida" style="display: none;"></h4>
+        <button onclick="cerrarSesion()" id="cerrar">Cerrar Sesión</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CIERRE DEL CODIGO -->
+  <script src="_script.js"></script> <!-- CONECCION CON EL .JS -->
+</body>
+</html>

@@ -1,3 +1,9 @@
+
+
+
+
+
+
 // EXPORTACION DE LOS DATOS TOMADOS EN EL FORMULARIO A LA BASE DE DATOS.
 const formulario = document.getElementById('formulario');
 const mensaje = document.getElementById("respuesta");
@@ -99,7 +105,9 @@ async function cargarResponsables() {
   }
 }
 // 4) Ejecutar la carga al abrir la página
-cargarResponsables();
+if(document.title ==! '___registro_de_control_inventario'){
+  cargarResponsables();
+}
 
 // INICIO DE SECION
 const pag= document.title
@@ -181,33 +189,67 @@ function cerrarSesion() {
 ////
 
 // GUNCION PARA _AR QUE MUESTRA Y OCULTA CAMPOS SEGUN EL TRATAMIENTO SELECCIONADO //
-document.getElementById("tratamiento").addEventListener("change", function() {
-  const valor = this.value;
-  if (valor === "REPROCESOS") {
-    document.getElementById("cantidad_de_lentes_reprocesados").style.display = "block";
-    document.getElementById("cantidad_de_lentes_reprocesados").required = true;
-    document.getElementById("cdlr").style.display = "block";
+if(document.title === '___registro_de_control_ar'){
+  document.getElementById("tratamiento").addEventListener("change", function() {
+    const valor = this.value;
+    if (valor === "REPROCESOS") {
+      document.getElementById("cantidad_de_lentes_reprocesados").style.display = "block";
+      document.getElementById("cantidad_de_lentes_reprocesados").required = true;
+      document.getElementById("cdlr").style.display = "block";
 
+      document.getElementById("cantidad_de_lentes_por_ciclo").style.display = "none";
+      document.getElementById("cantidad_de_lentes_por_ciclo").required = false;
+      document.getElementById("cdlpc").style.display = "none";
 
-    document.getElementById("cantidad_de_lentes_por_ciclo").style.display = "none";
-    document.getElementById("cantidad_de_lentes_por_ciclo").required = false;
-    document.getElementById("cdlpc").style.display = "none";
+      document.getElementById("numero_del_ciclo").style.display = "none";
+      document.getElementById("numero_del_ciclo").required = false;
+      document.getElementById("ndc").style.display = "none";
+    }
+  else {
+      document.getElementById("cantidad_de_lentes_reprocesados").style.display = "none";
+      document.getElementById("cantidad_de_lentes_reprocesados").required = false;
+      document.getElementById("cdlr").style.display = "none";
 
-    document.getElementById("numero_del_ciclo").style.display = "none";
-    document.getElementById("numero_del_ciclo").required = false;
-    document.getElementById("ndc").style.display = "none";
-  }
-else {
-    document.getElementById("cantidad_de_lentes_reprocesados").style.display = "none";
-    document.getElementById("cantidad_de_lentes_reprocesados").required = false;
-    document.getElementById("cdlr").style.display = "none";
+      document.getElementById("cantidad_de_lentes_por_ciclo").style.display = "block";
+      document.getElementById("cantidad_de_lentes_por_ciclo").required = true;
+      document.getElementById("cdlpc").style.display = "block";
 
-    document.getElementById("cantidad_de_lentes_por_ciclo").style.display = "block";
-    document.getElementById("cantidad_de_lentes_por_ciclo").required = true;
-    document.getElementById("cdlpc").style.display = "block";
-
-    document.getElementById("numero_del_ciclo").style.display = "block";
-    document.getElementById("numero_del_ciclo").required = true;
-    document.getElementById("ndc").style.display = "block";
-  }
+      document.getElementById("numero_del_ciclo").style.display = "block";
+      document.getElementById("numero_del_ciclo").required = true;
+      document.getElementById("ndc").style.display = "block";
+    }
   });
+}
+
+// FUNCION PARA INVENTARIO, QUE MUESTRA Y OCULTA CAMPOS SEGUN EL AREA SELECCIONADA //
+document.getElementById("area").addEventListener("change", function() {
+  const valor = this.value;
+
+  const area_div = document.getElementById('area-div');
+  area_div.querySelectorAll('input, select, textarea').forEach(el => {
+    el.required = false;
+  });
+
+  document.querySelectorAll('.ocultar').forEach(div => {
+    div.style.display = 'none';
+  });
+
+  if (valor === '') return;
+  if (valor === 'AR') seleccion = document.getElementById('ar-div');
+  if (valor === 'AUTOREGISTRO') seleccion = document.getElementById('autoregistro-div');
+  if (valor === 'BISEL') seleccion = document.getElementById('bisel-div');
+  if (valor === 'COATING') seleccion = document.getElementById('coating-div');
+  if (valor === 'DIGITACION') seleccion = document.getElementById('digitacion-div');
+  if (valor === 'INS. INICIAL') seleccion = document.getElementById('ins-inicial-div');
+  if (valor === 'INS. FINAL') seleccion = document.getElementById('ins-final-div');
+  if (valor === 'TALLA') seleccion = document.getElementById('talla-div');
+  if (valor === 'RECEPCION') seleccion = document.getElementById('recepcion-div');
+
+  if (seleccion){
+    seleccion.style.display = 'block';
+
+    seleccion.querySelectorAll('input, select, textarea').forEach(el => {
+      el.required = true;
+    });
+  }
+})
