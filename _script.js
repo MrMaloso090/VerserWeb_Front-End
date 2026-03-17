@@ -1,9 +1,3 @@
-
-
-
-
-
-
 // EXPORTACION DE LOS DATOS TOMADOS EN EL FORMULARIO A LA BASE DE DATOS.
 const formulario = document.getElementById('formulario');
 const mensaje = document.getElementById("respuesta");
@@ -52,6 +46,9 @@ formulario.addEventListener('submit', async function(event) {
       mensaje.style.display = "block";
 
       formulario.reset();
+
+      if(document.title === '___registro_de_control_inventario'){ReinicioCamposInventario()}
+
       return;
     }
 
@@ -254,4 +251,17 @@ if(document.title === '___registro_de_control_inventario'){
       });
     }
   })
+}
+
+// FUNCION PARA EL INVENTARIO, QUE OCULTA LOS CAMPOS CORRESPONDIENTES A CADA AREA, QUE SE APLICARA AL ENVIAR EL FORMULARIO, Y ASI DEJAS LA PAR LIMPIA VISUALMENTE.
+function ReinicioCamposInventario(){
+  
+  const area_div = document.getElementById('area-div');
+  area_div.querySelectorAll('input, select, textarea').forEach(el => {
+    el.required = false;
+  });
+
+  document.querySelectorAll('.ocultar').forEach(div => {
+    div.style.display = 'none';
+  });
 }
