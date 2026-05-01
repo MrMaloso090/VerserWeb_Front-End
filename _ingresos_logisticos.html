@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>___registro_de_control_ingresos_logisticos</title>
+  <link rel="stylesheet" href="_style_coordinacion.css"> <!-- CONECCION CON EL .CSS -->
+</head>
+<body>
+  <!-- COMIENZO DEL CODIGO -->
+   <div class="full">
+    <h1>INGRESOS LOGISTICOS</h1>
+    <hr>
+
+    <div class="container">
+
+      <div>
+        <nav>
+          <ul>
+            <li><a href="_ar.html">AR</a></li>
+            <li><a href="_bisel.html">Bisel</a></li>
+            <li><a href="_calidad.html">Calidad</a></li>
+            <li><a href="_digitacion.html">Digitacion</a></li>
+            <li><a href="_facturacion.html">Facturacion</a></li>
+            <li><a href="_ingresos.html">Ingresos</a></li>
+            <li><a href="_talla.html">Talla</a></li>
+            <li><a href="_coating.html">Coating</a></li>
+            <br><br>
+            <li><a href="_inventario.html">Inventario</a></li>
+            <li><a href="_ingresos_logisticos.html">Ingreso Logistico</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--LOGIN-->
+      <div class="login" id="login">
+        <div class="login-container">
+          Inicio de Sesion:
+          <input type="password" id="codigo" name="passcode" placeholder="Ingresa tu código">
+          <button onclick="verificacion()" id="iniciar">Entrar</button>
+          <p id="error" style="color:red; display:none;">Código incorrecto</p>
+        </div>
+      </div>
+      
+      <!-- CUESTIONARIO -->
+      <form id="formulario" style="display:none;">
+
+        <label>AGENCIA
+          <select name="agencia" id="agencia" required>
+            <option></option>
+            <option value="MEDELLIN">MEDELLIN</option>
+            <option value="CALI">CALI</option>
+            <option value="CUCUTA">CUCUTA</option>
+            <option value="REMOTO_ANTIOQUIA">REMOTO_ANTIOQUIA</option>
+          </select>
+        </label>
+
+        <label>HORARIO
+          <select name="horario" required>
+            <option></option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </label>
+
+        <!--COMIENZO DIV'S OCULTOS-->
+        <div id="agencia-div">
+
+          <div id="medellin-div" style="display:none;" class="ocultar">
+            <label>HUECO
+              <input type="number" name="hueco" min="0" step="1" required>
+            </label>
+
+            <label> COLOMBIA
+              <input type="number" name="colombia" min="0" step="1" required>
+            </label>
+            
+            <label>NORTE
+              <input type="number" name="norte" min="0" step="1" required>
+            </label>
+
+            <label>SUR
+              <input type="number" name="sur" min="0" step="1" required>
+            </label>
+          </div>
+
+          <div id="cali-div" style="display:none;" class="ocultar">
+            <label>CANTIDAD
+              <input type="number" name="cantidad_cali" min="0" step="1" required>
+            </label>
+          </div>
+
+          <div id="cucuta-div" style="display:none;" class="ocultar">
+            <label>CANTIDAD
+              <input type="number" name="cantidad_cucuta" min="0" step="1" required>
+            </label>
+          </div>
+
+          <div id="remoto_antioquia-div" style="display:none;" class="ocultar">
+            <label>CANTIDAD
+              <input type="number" name="cantidad_remoto_antioquia" min="0" step="1" required>
+            </label>
+          </div>
+
+        </div>
+        <!--FINAL DIV'S OCULTOS-->
+
+        <button type="submit" id="enviar">Enviar</button>
+        <p id="respuesta"></p>
+        
+        <h4 id="bienvenida" style="display: none;"></h4>
+        <button onclick="cerrarSesion()" id="cerrar">Cerrar Sesión</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CIERRE DEL CODIGO -->
+  <script src="_script.js"></script> <!-- CONECCION CON EL .JS -->
+</body>
+</html>
