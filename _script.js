@@ -252,53 +252,12 @@ if(document.title === '___registro_de_control_inventario'){
     }
   })
 }
+
 // FUNCION PARA EL INVENTARIO, QUE OCULTA LOS CAMPOS CORRESPONDIENTES A CADA AREA, QUE SE APLICARA AL ENVIAR EL FORMULARIO, Y ASI DEJAS LA PAR LIMPIA VISUALMENTE.
 function ReinicioCamposInventario(){
   
   const area_div = document.getElementById('area-div');
   area_div.querySelectorAll('input, select, textarea').forEach(el => {
-    el.required = false;
-  });
-
-  document.querySelectorAll('.ocultar').forEach(div => {
-    div.style.display = 'none';
-  });
-}
-
-// FUNCION PARA INGRESOS LOGISTICOS, QUE MUESTRA Y OCULTA CAMPOS SEGUN EL AREA SELECCIONADA //
-if(document.title === '___registro_de_control_ingresos_logisticos'){
-  document.getElementById("agencia").addEventListener("change", function() {
-    const valor = this.value;
-
-    const agencia_div = document.getElementById('agencia-div');
-    agencia_div.querySelectorAll('input, select, textarea').forEach(el => {
-      el.required = false;
-    });
-
-    document.querySelectorAll('.ocultar').forEach(div => {
-      div.style.display = 'none';
-    });
-
-    if (valor === '') return;
-    if (valor === 'MEDELLIN') seleccion = document.getElementById('medellin-div');
-    if (valor === 'CALI') seleccion = document.getElementById('cali-div');
-    if (valor === 'CUCUTA') seleccion = document.getElementById('cucuta-div');
-    if (valor === 'REMOTO_ANTIOQUIA') seleccion = document.getElementById('remoto_antioquia-div');
-    
-    if (seleccion){
-      seleccion.style.display = 'block';
-
-      seleccion.querySelectorAll('input, select, textarea').forEach(el => {
-        el.required = true;
-      });
-    }
-  })
-}
-// FUNCION PARA LOS INGRESOS LOGISTICOS, QUE OCULTA LOS CAMPOS CORRESPONDIENTES A CADA AGENCIA, QUE SE APLICARA AL ENVIAR EL FORMULARIO, Y ASI DEJAR LA PAR LIMPIA VISUALMENTE.
-function ReinicioCamposInventario(){
-  
-  const agencia_div = document.getElementById('agencia-div');
-  agencia_div.querySelectorAll('input, select, textarea').forEach(el => {
     el.required = false;
   });
 
