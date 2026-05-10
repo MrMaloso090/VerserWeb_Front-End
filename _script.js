@@ -203,6 +203,19 @@ if(document.title === '___registro_de_control_ar'){
       document.getElementById("numero_del_ciclo").required = false;
       document.getElementById("ndc").style.display = "none";
     }
+    else if (valor === "OTROS") {
+      document.getElementById("cantidad_de_lentes_reprocesados").style.display = "none";
+      document.getElementById("cantidad_de_lentes_reprocesados").required = false;
+      document.getElementById("cdlr").style.display = "none";
+
+      document.getElementById("cantidad_de_lentes_por_ciclo").style.display = "none";
+      document.getElementById("cantidad_de_lentes_por_ciclo").required = false;
+      document.getElementById("cdlpc").style.display = "none";
+
+      document.getElementById("numero_del_ciclo").style.display = "none";
+      document.getElementById("numero_del_ciclo").required = false;
+      document.getElementById("ndc").style.display = "none";
+    }
   else {
       document.getElementById("cantidad_de_lentes_reprocesados").style.display = "none";
       document.getElementById("cantidad_de_lentes_reprocesados").required = false;
