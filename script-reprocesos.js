@@ -1,8 +1,12 @@
+// URLs DEL CLOUD RUN //
+const cloud_run_ANTIGUO = "https://verserweb-back-end-58996458362.us-central1.run.app";
+const cloud_run_NUEVO = "https://verserweb-back-end-482605283139.southamerica-east1.run.app";
+
 //IMPORTACION DE LA LISTA DE CLIENTES DE MYSQL A AL SELECT DE LA WEB //
 async function cargarClientes() {
   try {
     // 1) Pedir al backend la lista de clientes
-    const resp = await fetch("https://verserweb-back-end-58996458362.us-central1.run.app/peticion_clientes"); // URL de tu backend en Cloud Run
+    const resp = await fetch(`${cloud_run_NUEVO}/peticion_clientes`); // URL de tu backend en Cloud Run
     const clientes = await resp.json();
 
     // 2) Buscar el <select> en el HTML
@@ -57,7 +61,7 @@ async function verificacion() {
   error.style.display = "none";
 
   try {
-    const resp = await fetch("https://verserweb-back-end-58996458362.us-central1.run.app/login_usuario", { //LINK DE CLOUD RUN AL BACK-END
+    const resp = await fetch(`${cloud_run_NUEVO}/login_usuario`, { //LINK DE CLOUD RUN AL BACK-END
       method: "POST", 
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ codigo, pag })
@@ -139,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("🧾 JSON:", JSON.stringify(datos, null, 2));
 
       // LINK AL SERVIDOR QUE REALIZA LA CONEXION AL BACK END
-      const resp = await fetch("https://verserweb-back-end-58996458362.us-central1.run.app/guardado_en_DBs_IDR", {
+      const resp = await fetch(`${cloud_run_NUEVO}/guardado_en_DBs_IDR`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(datos)
